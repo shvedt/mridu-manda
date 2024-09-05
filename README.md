@@ -4,4 +4,4 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 
 ## Features
 
-1. Shows temperature and humidity
+- Shows temperature and humidity

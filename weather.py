@@ -1,4 +1,4 @@
-import os, requests, json
+import os, requests
 
 city = input("Enter city: ")
 
