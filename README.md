@@ -5,3 +5,9 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 ## Features
 
 - Shows temperature and humidity
+
+## Version 0.3
+
+- Changed weather display
+- Added minimum and maximum temperature
+- Now it shows the desired city along with country 

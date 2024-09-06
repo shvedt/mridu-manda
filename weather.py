@@ -11,7 +11,15 @@ weather_data = response.json()
 
 cityName = weather_data['name']
 temp = weather_data['main'].get('temp') - 273.15
+temp_min = weather_data['main'].get('temp_min') - 273.15
+temp_max = weather_data['main'].get('temp_max') - 273.15
 hum = weather_data['main'].get('humidity')
+city_name = weather_data['name']
+country = weather_data['sys'].get('country')
 
+print(f"Weather report for {cityName}, {country}")
+print("-----------------------------------")
 print("Temperature: ", temp)
 print("Humidity: ", hum)
+print("Min Temperature: ", temp_min)
+print("Max Temperature: ", temp_max)
