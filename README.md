@@ -6,13 +6,11 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 
 - Shows temperature and humidity
 
-## Version 0.4
+## Note
 
-- Added directory structure
-- Added weather description
+Please manually add your api key from OpenWeatherMap as a environment variable with the variable name `api_key`
 
-## Version 0.3
+## Version 0.5 -- Latest Release
 
-- Changed weather display
-- Added minimum and maximum temperature
-- Now it shows the desired city along with country 
+- Added Changelog
+- Updated Readme

@@ -31,6 +31,9 @@ Documentation = "https://github.com/Shvetank Dattatreya/mridumanda#readme"
 Issues = "https://github.com/Shvetank Dattatreya/mridumanda/issues"
 Source = "https://github.com/Shvetank Dattatreya/mridumanda"
 
+[project.scripts]
+weather = "python mridumanda/weather.py"
+
 [tool.hatch.version]
 path = "src/mridumanda/__about__.py"
 
