@@ -1,5 +1,12 @@
 # Mridu-Manda Changelog
 
+## Version 0.7
+
+- Made the divider after City and Country name dynamic 
+- Updated to show only two decimal places of temperatures in float value
+- Now it clears the terminal before printing the weather report
+- Misc updates to show the report in a more compact format
+
 ## Version 0.6
 
 - Uploaded to PyPI, so you can download with `pip` easily
