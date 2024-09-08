@@ -1,5 +1,10 @@
 # Mridu-Manda Changelog
 
+## Version 0.6
+
+- Uploaded to PyPI, so you can download with `pip` easily
+- Structured the display for better readability
+
 ## Version 0.5
 
 - Added Changelog
