@@ -1,5 +1,10 @@
 # Mridu-Manda Changelog
 
+## Version 0.8
+
+- Divided the project into functions and files for better management
+- Updated readme.md with guide to install and run the program
+
 ## Version 0.7
 
 - Made the divider after City and Country name dynamic 

@@ -34,7 +34,7 @@ Issues = "https://github.com/Shvetank Dattatreya/mridumanda/issues"
 Source = "https://github.com/Shvetank Dattatreya/mridumanda"
 
 [project.scripts]
-weather = "mridumanda_shvedt.weather:main"
+weather = "mridumanda_shvedt.__main__:main"
 
 [tool.hatch.version]
 path = "src/mridumanda_shvedt/__about__.py"
