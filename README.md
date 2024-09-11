@@ -4,8 +4,8 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 
 ## Features
 
-- Shows temperature, humidity, weather conditions
 - Compact display of weather
+- Supports automatic location detection using ipInfo
 
 ## Usage
 
@@ -25,7 +25,8 @@ weather
 
 Please manually add your api key from OpenWeatherMap as a environment variable with the variable name `api_key`
 
-## Version 0.8 - Latest Release
+## Version 0.9 -- Latest Release
 
-- Divided the project into functions and files for better management
-- Updated readme.md with guide to install and run the program
+- Now supports automatic location, so you don't have to enter the location manually
+- Added pressure
+- Added units like degrees and hPa

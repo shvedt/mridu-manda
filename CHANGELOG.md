@@ -1,5 +1,11 @@
 # Mridu-Manda Changelog
 
+## Version 0.9
+
+- Now supports automatic location, so you don't have to enter the location manually
+- Added pressure
+- Added units like degrees and hPa
+
 ## Version 0.8
 
 - Divided the project into functions and files for better management
