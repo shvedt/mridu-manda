@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = 'A minimal console based weather application.'
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
+license = "GPL-3.0"
 keywords = []
 authors = [
   { name = "Shvetank Dattatreya", email = "dshvetank@gmail.com" },
@@ -34,7 +34,7 @@ Issues = "https://github.com/Shvetank Dattatreya/mridumanda/issues"
 Source = "https://github.com/Shvetank Dattatreya/mridumanda"
 
 [project.scripts]
-weather = "mridumanda_shvedt.__main__:main"
+mrdmnd = "mridumanda_shvedt.__main__:main"
 
 [tool.hatch.version]
 path = "src/mridumanda_shvedt/__about__.py"

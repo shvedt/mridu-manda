@@ -1,4 +1,5 @@
-import os, requests
+import os
+import requests
 
 
 def get_city_from_ip():
@@ -21,7 +22,7 @@ def get_weather():
     if city == None:
         city = input("Enter city name: ")
     
-    API_KEY = os.getenv('api_key')
+    API_KEY = get_api_key()
     API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY
     
     weather_map_response = requests.get(API_URL)
@@ -39,6 +40,15 @@ def get_weather():
     location = f"Weather report for {city_name}, {country}"
 
     return [temp, temp_min, temp_max, hum, desc, pressure, location]
+
+
+def get_api_key():
+    api_key_file = os.path.join(os.getenv('HOME'), '.config','mridumanda', 'api_key.txt')
+
+    with open(api_key_file, 'r') as f:
+        api_key = f.read().split('=')[1].strip()
+
+    return api_key
 
 
 def display_weather(weather_data):

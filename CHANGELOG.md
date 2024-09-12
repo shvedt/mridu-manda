@@ -1,5 +1,13 @@
 # Mridu-Manda Changelog
 
+## Version 1.0 - Latest
+
+- Added support for adding user api key to a `.txt` file automatically
+- Added license information
+- Updated documentation
+- Changed script name from `weather` to `mrdmnd`
+- Removed support for environment variable
+
 ## Version 0.9
 
 - Now supports automatic location, so you don't have to enter the location manually

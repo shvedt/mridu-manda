@@ -7,7 +7,13 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 - Compact display of weather
 - Supports automatic location detection using ipInfo
 
-## Usage
+## Requirements
+
+- Requires an API key from OpenWeatherMap
+- Requires Python 3.8 or later
+- Requires `requests` module 2.31 or later
+
+## Installation
 
 ### From PyPI
 
@@ -15,18 +21,32 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 pip install mridumanda_shvedt
 ```
 
+## Usage
+
 After installing run with
 
 ```bash
-weather
+mrdmnd
 ```
 
-## Note
+If it is first time, you will be prompted to enter your API key from OpenWeatherMap. After it is done, run the program again and enjoy.
 
-Please manually add your api key from OpenWeatherMap as a environment variable with the variable name `api_key`
+## Contributions
 
-## Version 0.9 -- Latest Release
+Feel free to contribute to the project by opening an issue.
 
-- Now supports automatic location, so you don't have to enter the location manually
-- Added pressure
-- Added units like degrees and hPa
+## License
+
+This is licensed under the GNU General Public License version 3.0
+
+## Changelog
+
+### Version 1.0 - Latest
+
+- Added support for adding user api key to a `.txt` file automatically
+- Added license information
+- Updated documentation
+- Changed script name from `weather` to `mrdmnd`
+- Removed support for environment variable
+
+For full changelog refer to [CHANGELOG](https://github.com/shvedt/mridu-manda/blob/main/CHANGELOG.md).
