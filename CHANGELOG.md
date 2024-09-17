@@ -1,6 +1,11 @@
 # Mridu-Manda Changelog
 
-## Version 1.0 - Latest
+## Version 1.1 - Latest Release
+
+- Made changes to handle api call exceptions and errors properly
+- Misc optimization for better performance
+
+## Version 1.0
 
 - Added support for adding user api key to a `.txt` file automatically
 - Added license information

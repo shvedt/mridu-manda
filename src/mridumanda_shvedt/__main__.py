@@ -8,7 +8,10 @@ def main():
     
     weather_data = get_weather()
     
-    display_weather(weather_data)
+    if weather_data is not None:
+        display_weather(weather_data)
+    else:
+        sys.exit(1)
 
 
 def init():

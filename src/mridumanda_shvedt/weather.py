@@ -25,7 +25,15 @@ def get_weather():
     API_KEY = get_api_key()
     API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY
     
-    weather_map_response = requests.get(API_URL)
+    try:
+        weather_map_response = requests.get(API_URL)
+        
+        if weather_map_response.status_code is not 200:
+            print("Unable to fetch weather data")
+            return None
+    except requests.exceptions.RequestException as e:
+        print("Failed to fetch weather data")
+        return None
 
     weather_data = weather_map_response.json()
 

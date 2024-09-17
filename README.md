@@ -41,7 +41,7 @@ This is licensed under the GNU General Public License version 3.0
 
 ## Changelog
 
-### Version 1.0 - Latest
+### Version 1.0
 
 - Added support for adding user api key to a `.txt` file automatically
 - Added license information
