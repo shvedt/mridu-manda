@@ -1,5 +1,6 @@
 import os
 import requests
+from mridumanda_shvedt.weather_ascii import ascii_arts
 
 
 def get_city_from_ip():
@@ -37,17 +38,17 @@ def get_weather():
 
     weather_data = weather_map_response.json()
 
-    temp = weather_data['main'].get('temp') - 273.15
-    temp_min = weather_data['main'].get('temp_min') - 273.15
-    temp_max = weather_data['main'].get('temp_max') - 273.15
-    hum = weather_data['main'].get('humidity')
-    pressure = weather_data['main'].get('pressure')
+    temp = f"{weather_data['main'].get('temp') - 273.15:.2f} °C"
+    temp_min = f"{weather_data['main'].get('temp_min') - 273.15:.2f} °C"
+    temp_max = f"{weather_data['main'].get('temp_max') - 273.15:.2f} °C"
+    hum = f"{weather_data['main'].get('humidity')}%"
+    pressure = f"{weather_data['main'].get('pressure')} hPa"
     desc = weather_data['weather'][0].get('description').title()
     city_name = weather_data['name']
     country = weather_data['sys'].get('country')
-    location = f"Weather report for {city_name}, {country}"
+    location = f"{city_name}, {country}"
 
-    return [temp, temp_min, temp_max, hum, desc, pressure, location]
+    return [ " ", location, temp, temp_min, temp_max, hum, desc, pressure, " "]
 
 
 def get_api_key():
@@ -59,14 +60,27 @@ def get_api_key():
     return api_key
 
 
+# def display_weather_data_ascii(weather_data):
+#     os.system('clear')
+
+#     for i in range(len(weather_data)):
+#         print(ascii_arts.clear_day[i] + f"{weather_data[i]}")
+
+
+def display_weather_one_liner(weather_data):
+    os.system('clear')
+
+    print(f"Location: {weather_data[1]} | Temp: {weather_data[2]} | Humidity: {weather_data[5]} | Pressure: {weather_data[7]} | {weather_data[6]}")
+
+
 def display_weather(weather_data):
     os.system('clear')
 
-    print(weather_data[-1])
+    print(f"Weather data for {weather_data[1]}")
     print(f" {'-' * (len(weather_data[-1]) - 2)} ")
-    print(f"Temperature:          {weather_data[0]:.2f} °C")
-    print(f"Humidity:             {weather_data[3]}%")
-    print(f"Min Temperature:      {weather_data[1]:.2f} °C")
-    print(f"Max Temperature:      {weather_data[2]:.2f} °C")
-    print(f"Condition:            {weather_data[4]}")
-    print(f"Pressure:             {weather_data[5]} hPa")
+    print(f"Temperature:          {weather_data[2]}")
+    print(f"Humidity:             {weather_data[5]}")
+    print(f"Min Temperature:      {weather_data[3]}")
+    print(f"Max Temperature:      {weather_data[4]}")
+    print(f"Condition:            {weather_data[6]}")
+    print(f"Pressure:             {weather_data[7]}")

@@ -1,5 +1,12 @@
 # Mridu-Manda Changelog
 
+## Version 1.2 - Latest Release
+
+- Added a new display option named 'one liner' that shows the output in one line for minimalism
+- Added ASCII representations of weather conditions but not implemented yet
+- Added command line argument `-o` for the 'one liner' display option
+- Formatted the code for better manageability
+
 ## Version 1.1 - Latest Release
 
 - Made changes to handle api call exceptions and errors properly

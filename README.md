@@ -6,12 +6,18 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 
 - Compact display of weather
 - Supports automatic location detection using ipInfo
+- Two different output formats, one liner and default
 
 ## Requirements
 
 - Requires an API key from OpenWeatherMap
 - Requires Python 3.8 or later
 - Requires `requests` module 2.31 or later
+
+## Note
+```
+    Weather ASCII is added but is not yet implemented, if you can, then fork this repository and implement it yourself.
+```
 
 ## Installation
 
@@ -26,7 +32,8 @@ pip install mridumanda_shvedt
 After installing run with
 
 ```bash
-mrdmnd
+mrdmnd          # for default display of weather
+mrdmnd -o       # for one line display of weather
 ```
 
 If it is first time, you will be prompted to enter your API key from OpenWeatherMap. After it is done, run the program again and enjoy.
@@ -35,18 +42,22 @@ If it is first time, you will be prompted to enter your API key from OpenWeather
 
 Feel free to contribute to the project by opening an issue.
 
+## Credits
+
+The ASCII art for weather representation in this project was created by [Julynx](https://github.com/Julynx). It was taken from [here](https://github.com/Julynx/wthr).
+
+
 ## License
 
 This is licensed under the GNU General Public License version 3.0
 
 ## Changelog
 
-### Version 1.0
+### Version 1.2 - Latest Release
 
-- Added support for adding user api key to a `.txt` file automatically
-- Added license information
-- Updated documentation
-- Changed script name from `weather` to `mrdmnd`
-- Removed support for environment variable
+- Added a new display option named 'one liner' that shows the output in one line for minimalism
+- Added ASCII representations of weather conditions but not implemented yet
+- Added command line argument `-o` for the 'one liner' display option
+- Formatted the code for better manageability
 
 For full changelog refer to [CHANGELOG](https://github.com/shvedt/mridu-manda/blob/main/CHANGELOG.md).

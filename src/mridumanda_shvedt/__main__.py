@@ -1,6 +1,6 @@
 import os
 import sys
-from mridumanda_shvedt.weather import get_weather, display_weather
+from mridumanda_shvedt.weather import get_weather, display_weather, display_weather_one_liner
 
 
 def main():
@@ -9,7 +9,11 @@ def main():
     weather_data = get_weather()
     
     if weather_data is not None:
-        display_weather(weather_data)
+        if len(sys.argv) > 1:
+            if sys.argv[1] == '-o':
+                display_weather_one_liner(weather_data)
+        else:
+            display_weather(weather_data)
     else:
         sys.exit(1)
 
