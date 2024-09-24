@@ -1,6 +1,11 @@
 # Mridu-Manda Changelog
 
-## Version 1.2 - Latest Release
+## Version 1.3 - Latest Release
+
+- Implemented the ascii arts
+- Added command line argument `-g` for weather display with ascii arts
+
+## Version 1.2
 
 - Added a new display option named 'one liner' that shows the output in one line for minimalism
 - Added ASCII representations of weather conditions but not implemented yet

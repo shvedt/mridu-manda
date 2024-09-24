@@ -14,11 +14,6 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 - Requires Python 3.8 or later
 - Requires `requests` module 2.31 or later
 
-## Note
-```
-    Weather ASCII is added but is not yet implemented, if you can, then fork this repository and implement it yourself.
-```
-
 ## Installation
 
 ### From PyPI
@@ -34,6 +29,7 @@ After installing run with
 ```bash
 mrdmnd          # for default display of weather
 mrdmnd -o       # for one line display of weather
+mrdmnd -g       # for weather display with ascii art
 ```
 
 If it is first time, you will be prompted to enter your API key from OpenWeatherMap. After it is done, run the program again and enjoy.
@@ -55,9 +51,7 @@ This is licensed under the GNU General Public License version 3.0
 
 ### Version 1.2 - Latest Release
 
-- Added a new display option named 'one liner' that shows the output in one line for minimalism
-- Added ASCII representations of weather conditions but not implemented yet
-- Added command line argument `-o` for the 'one liner' display option
-- Formatted the code for better manageability
+- Implemented the ascii arts
+- Added command line argument `-g` for weather display with ascii arts
 
 For full changelog refer to [CHANGELOG](https://github.com/shvedt/mridu-manda/blob/main/CHANGELOG.md).

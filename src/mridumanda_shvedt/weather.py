@@ -44,11 +44,12 @@ def get_weather():
     hum = f"{weather_data['main'].get('humidity')}%"
     pressure = f"{weather_data['main'].get('pressure')} hPa"
     desc = weather_data['weather'][0].get('description').title()
+    id = weather_data['weather'][0].get('id')
     city_name = weather_data['name']
     country = weather_data['sys'].get('country')
     location = f"{city_name}, {country}"
 
-    return [ " ", location, temp, temp_min, temp_max, hum, desc, pressure, " "]
+    return [ "", location, temp, "", temp_min, temp_max, hum, "", desc, pressure, " ", id]
 
 
 def get_api_key():
@@ -60,27 +61,77 @@ def get_api_key():
     return api_key
 
 
-# def display_weather_data_ascii(weather_data):
-#     os.system('clear')
+def display_weather_data_ascii(weather_data):
+    os.system('clear')
 
-#     for i in range(len(weather_data)):
-#         print(ascii_arts.clear_day[i] + f"{weather_data[i]}")
+    if weather_data[-1] in range(200, 232):
+        for i in range(11):
+            print(ascii_arts.thunder[i] + f" {weather_data[i]}")
+    elif weather_data[-1] in range(300, 321):
+        for i in range(11):
+            print(ascii_arts.dust[i] + f" {weather_data[i]}")
+    elif weather_data[-1] in range(500, 531):
+        for i in range(11):
+            print(ascii_arts.rain[i] + f" {weather_data[i]}")
+    elif weather_data[-1] in range(600, 622):
+        for i in range(11):
+            print(ascii_arts.snow[i] + f" {weather_data[i]}")
+    elif weather_data[-1] in range(701, 781):
+        if weather_data[-1] == 701:
+            for i in range(11):
+                print(ascii_arts.dust[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 711:
+            for i in range(11):
+                print(ascii_arts.smoke[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 721:
+            for i in range(11):
+                print(ascii_arts.dust[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 731:
+            for i in range(11):
+                print(ascii_arts.dust[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 741:
+            for i in range(11):
+                print(ascii_arts.fog[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 751:
+            for i in range(11):
+                print(ascii_arts.dust[i] + f" {weather_data[i]}")
+        elif weather_data[i] == 761:
+            for i in range(11):
+                print(ascii_arts.dust[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 762:
+            for i in range(11):
+                print(ascii_arts.ash[i] + f" {weather_data[i]}")
+        elif weather_data[-1] == 771:
+            for i in range(11):
+                print(ascii_arts.squall[i] + f" {weather_data[i]}")
+        elif weather_data[i] == 781:
+            for i in range(11):
+                print(ascii_arts.tornado[i] + f" {weather_data[i]}")
+        else:
+            for i in range(11):
+                print(ascii_arts.dust[i] + f" {weather_data[i]}")
+    elif weather_data[-1] == 800:
+        for i in range(11):
+                print(ascii_arts.clear_day[i] + f" {weather_data[i]}")
+    else:
+        for i in range(11):
+            print(ascii_arts.clouds[i] + f" {weather_data[i]}")
 
 
 def display_weather_one_liner(weather_data):
     os.system('clear')
 
-    print(f"Location: {weather_data[1]} | Temp: {weather_data[2]} | Humidity: {weather_data[5]} | Pressure: {weather_data[7]} | {weather_data[6]}")
+    print(f"Location: {weather_data[1]} | Temp: {weather_data[2]} | Humidity: {weather_data[5]} | Pressure: {weather_data[9]} | {weather_data[8]}")
 
 
 def display_weather(weather_data):
     os.system('clear')
 
     print(f"Weather data for {weather_data[1]}")
-    print(f" {'-' * (len(weather_data[-1]) - 2)} ")
+    print(f" {'-' * (len('Weather data for') + len({weather_data[1]}) - 2)} ")
     print(f"Temperature:          {weather_data[2]}")
-    print(f"Humidity:             {weather_data[5]}")
-    print(f"Min Temperature:      {weather_data[3]}")
-    print(f"Max Temperature:      {weather_data[4]}")
-    print(f"Condition:            {weather_data[6]}")
-    print(f"Pressure:             {weather_data[7]}")
+    print(f"Humidity:             {weather_data[6]}")
+    print(f"Min Temperature:      {weather_data[4]}")
+    print(f"Max Temperature:      {weather_data[5]}")
+    print(f"Condition:            {weather_data[8]}")
+    print(f"Pressure:             {weather_data[9]}")
