@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 from mridumanda_shvedt.weather import get_weather, display_weather, display_weather_one_liner, display_weather_data_ascii
@@ -6,14 +7,21 @@ from mridumanda_shvedt.weather import get_weather, display_weather, display_weat
 def main():
     init()
     
-    weather_data = get_weather()
+    parser = argparse.ArgumentParser(description="Weather display options and city input")
+    
+    parser.add_argument('-o', '--one-liner', action='store_true', help='Display weather data in one-liner format')
+    parser.add_argument('-g', '--graphical', action='store_true', help='Display weather data with ascii representations')
+    parser.add_argument('-c', '--city', type=str, help='Specify city to display weather')
+    
+    args = parser.parse_args()
+    
+    weather_data = get_weather(city = args.city) if args.city else get_weather(None)
     
     if weather_data is not None:
-        if len(sys.argv) > 1:
-            if sys.argv[1] == '-o':
-                display_weather_one_liner(weather_data)
-            elif sys.argv[1] == '-g':
-                display_weather_data_ascii(weather_data)
+        if args.one_liner:
+            display_weather_one_liner(weather_data)
+        elif args.graphical:
+            display_weather_data_ascii(weather_data)
         else:
             display_weather(weather_data)
     else:

@@ -1,6 +1,12 @@
 # Mridu-Manda Changelog
 
-## Version 1.3 - Latest Release
+## Version 1.4 - Latest Release
+
+- Changed to argparse to better management of command line arguments
+- Added the `-c` flag to support entering the city name as a command line argument
+- Miscellaneous changes to optimize performance
+
+## Version 1.3
 
 - Implemented the ascii arts
 - Added command line argument `-g` for weather display with ascii arts
@@ -12,7 +18,7 @@
 - Added command line argument `-o` for the 'one liner' display option
 - Formatted the code for better manageability
 
-## Version 1.1 - Latest Release
+## Version 1.1
 
 - Made changes to handle api call exceptions and errors properly
 - Misc optimization for better performance

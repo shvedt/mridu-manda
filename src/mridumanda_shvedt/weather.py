@@ -8,20 +8,18 @@ def get_city_from_ip():
         ip_info_response = requests.get("https://ipinfo.io/json")
         
         if ip_info_response.status_code!= 200:
-            raise Exception("Failed to get location from IP info \nEnter city name manually")
+            raise Exception("Failed to get location from IP info \nEnter city name manually after the -c flag")
         
         return ip_info_response.json().get('city')
     
     except requests.exceptions.RequestException as e:
-        print("Failed to get location from IP info \nEnter city name manually")
+        print("Failed to get location from IP info \nEnter city name manually after the -c flag")
         return None
 
 
-def get_weather():
-    city = get_city_from_ip()
-    
-    if city == None:
-        city = input("Enter city name: ")
+def get_weather(city):
+    if city is None:
+        city = get_city_from_ip()
     
     API_KEY = get_api_key()
     API_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY
@@ -121,7 +119,7 @@ def display_weather_data_ascii(weather_data):
 def display_weather_one_liner(weather_data):
     os.system('clear')
 
-    print(f"Location: {weather_data[1]} | Temp: {weather_data[2]} | Humidity: {weather_data[5]} | Pressure: {weather_data[9]} | {weather_data[8]}")
+    print(f"Location: {weather_data[1]} | Temp: {weather_data[2]} | Humidity: {weather_data[6]} | Pressure: {weather_data[9]} | {weather_data[8]}")
 
 
 def display_weather(weather_data):

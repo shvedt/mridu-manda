@@ -6,6 +6,7 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 
 - Compact display of weather
 - Supports automatic location detection using ipInfo
+- Supports command line city input
 - Two different output formats, one liner and default
 
 ## Requirements
@@ -24,12 +25,13 @@ pip install mridumanda_shvedt
 
 ## Usage
 
-After installing run with
+After installing run
 
 ```bash
-mrdmnd          # for default display of weather
-mrdmnd -o       # for one line display of weather
-mrdmnd -g       # for weather display with ascii art
+mrdmnd                  # for default display of weather
+mrdmnd -o               # for one line display of weather
+mrdmnd -g               # for weather display with ascii art
+mrdmnd -c Kolkata       # for weather display with city name 
 ```
 
 If it is first time, you will be prompted to enter your API key from OpenWeatherMap. After it is done, run the program again and enjoy.
@@ -49,9 +51,8 @@ This is licensed under the GNU General Public License version 3.0
 
 ## Changelog
 
-### Version 1.2 - Latest Release
+### Version 1.4 - Latest Release
 
-- Implemented the ascii arts
-- Added command line argument `-g` for weather display with ascii arts
-
-For full changelog refer to [CHANGELOG](https://github.com/shvedt/mridu-manda/blob/main/CHANGELOG.md).
+- Changed to argparse to better management of command line arguments
+- Added the `-c` flag to support entering the city name as a command line argument
+- Miscellaneous changes to optimize performance
