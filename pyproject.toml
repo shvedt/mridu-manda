@@ -30,9 +30,9 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/Shvetank Dattatreya/mridumanda#readme"
-Issues = "https://github.com/Shvetank Dattatreya/mridumanda/issues"
-Source = "https://github.com/Shvetank Dattatreya/mridumanda"
+Documentation = "https://github.com/shvedt/mridu-manda/blob/main/README.md"
+Issues = "https://github.com/shvedt/mridu-manda/issues"
+Source = "https://github.com/shvedt/mridu-manda"
 
 [project.scripts]
 mrdmnd = "mridumanda_shvedt.__main__:main"

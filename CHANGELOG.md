@@ -1,6 +1,10 @@
 # Mridu-Manda Changelog
 
-## Version 1.4 - Latest Release
+## Version 1.5 - Latest Release
+
+- Added support for Windows users
+
+## Version 1.4
 
 - Changed to argparse to better management of command line arguments
 - Added the `-c` flag to support entering the city name as a command line argument

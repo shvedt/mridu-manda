@@ -29,7 +29,12 @@ def main():
 
 
 def init():
-    program_dir = os.path.join(os.getenv('HOME'), '.config', 'mridumanda')
+    home_dir = os.path.expanduser('~')
+    
+    if os.name == 'NT':
+        program_dir = os.path.join(home_dir, 'AppData', 'Local', 'mridumanda')
+    else:
+        program_dir = os.path.join(home_dir, '.config', 'mridumanda')
     
     if not os.path.isfile(os.path.join(program_dir, 'api_key.txt')):
         os.makedirs(program_dir, exist_ok=True)

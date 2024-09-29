@@ -51,8 +51,6 @@ This is licensed under the GNU General Public License version 3.0
 
 ## Changelog
 
-### Version 1.4 - Latest Release
+### Version 1.5 - Latest Release
 
-- Changed to argparse to better management of command line arguments
-- Added the `-c` flag to support entering the city name as a command line argument
-- Miscellaneous changes to optimize performance
+- Added support for Windows users

@@ -51,8 +51,13 @@ def get_weather(city):
 
 
 def get_api_key():
-    api_key_file = os.path.join(os.getenv('HOME'), '.config','mridumanda', 'api_key.txt')
-
+    home_dir = os.path.expanduser('~')
+    
+    if os.name == 'NT':
+        api_key_file = os.path.join(home_dir, 'AppData', 'Local', 'mridumanda', 'api_key.txt')
+    else:
+        api_key_file = os.path.join(home_dir, '.config','mridumanda', 'api_key.txt')
+    
     with open(api_key_file, 'r') as f:
         api_key = f.read().split('=')[1].strip()
 
@@ -81,12 +86,15 @@ def display_weather_data_ascii(weather_data):
         801: ascii_arts.clouds
     }
 
-    ascii_art = None
-
     for key, art in ascii_mapping.items():
-        if weather_data[-1] in key:
-            ascii_art = art
-            break
+        if isinstance(key, range):
+            if weather_data[-1] in key:
+                ascii_art = art
+                break
+        elif isinstance(key, int):
+            if weather_data[-1] == key:
+                ascii_art = art
+                break
 
     for i in range(11):
         print(ascii_art[i] + f" {weather_data[i]}")
