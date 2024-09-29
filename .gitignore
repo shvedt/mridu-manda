@@ -61,3 +61,4 @@ test_*.xml
 
 # Tests
 tests/
+test.py

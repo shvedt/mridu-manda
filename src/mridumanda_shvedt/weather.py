@@ -61,59 +61,35 @@ def get_api_key():
 
 def display_weather_data_ascii(weather_data):
     os.system('clear')
+    
+    ascii_mapping = {
+        range(200, 232): ascii_arts.thunder,
+        range(300, 321): ascii_arts.dust,
+        range(500, 531): ascii_arts.rain,
+        range(600, 622): ascii_arts.snow,
+        701: ascii_arts.dust,
+        711: ascii_arts.smoke,
+        721: ascii_arts.dust,
+        731: ascii_arts.dust,
+        741: ascii_arts.fog,
+        751: ascii_arts.dust,
+        761: ascii_arts.dust,
+        762: ascii_arts.ash,
+        771: ascii_arts.squall,
+        781: ascii_arts.tornado,
+        800: ascii_arts.clear_day,
+        801: ascii_arts.clouds
+    }
 
-    if weather_data[-1] in range(200, 232):
-        for i in range(11):
-            print(ascii_arts.thunder[i] + f" {weather_data[i]}")
-    elif weather_data[-1] in range(300, 321):
-        for i in range(11):
-            print(ascii_arts.dust[i] + f" {weather_data[i]}")
-    elif weather_data[-1] in range(500, 531):
-        for i in range(11):
-            print(ascii_arts.rain[i] + f" {weather_data[i]}")
-    elif weather_data[-1] in range(600, 622):
-        for i in range(11):
-            print(ascii_arts.snow[i] + f" {weather_data[i]}")
-    elif weather_data[-1] in range(701, 781):
-        if weather_data[-1] == 701:
-            for i in range(11):
-                print(ascii_arts.dust[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 711:
-            for i in range(11):
-                print(ascii_arts.smoke[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 721:
-            for i in range(11):
-                print(ascii_arts.dust[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 731:
-            for i in range(11):
-                print(ascii_arts.dust[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 741:
-            for i in range(11):
-                print(ascii_arts.fog[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 751:
-            for i in range(11):
-                print(ascii_arts.dust[i] + f" {weather_data[i]}")
-        elif weather_data[i] == 761:
-            for i in range(11):
-                print(ascii_arts.dust[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 762:
-            for i in range(11):
-                print(ascii_arts.ash[i] + f" {weather_data[i]}")
-        elif weather_data[-1] == 771:
-            for i in range(11):
-                print(ascii_arts.squall[i] + f" {weather_data[i]}")
-        elif weather_data[i] == 781:
-            for i in range(11):
-                print(ascii_arts.tornado[i] + f" {weather_data[i]}")
-        else:
-            for i in range(11):
-                print(ascii_arts.dust[i] + f" {weather_data[i]}")
-    elif weather_data[-1] == 800:
-        for i in range(11):
-                print(ascii_arts.clear_day[i] + f" {weather_data[i]}")
-    else:
-        for i in range(11):
-            print(ascii_arts.clouds[i] + f" {weather_data[i]}")
+    ascii_art = None
+
+    for key, art in ascii_mapping.items():
+        if weather_data[-1] in key:
+            ascii_art = art
+            break
+
+    for i in range(11):
+        print(ascii_art[i] + f" {weather_data[i]}")
 
 
 def display_weather_one_liner(weather_data):
