@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 from mridumanda_shvedt.weather import get_weather, display_weather, display_weather_one_liner, display_weather_data_ascii
+from mridumanda_shvedt.weather import display_weather_data_ascii_color
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
     
     parser.add_argument('-o', '--one-liner', action='store_true', help='Display weather data in one-liner format')
     parser.add_argument('-g', '--graphical', action='store_true', help='Display weather data with ascii representations')
+    parser.add_argument('-gc', '--graphical-color', action='store_true', help='Display weather data with color and ascii representations')
     parser.add_argument('-c', '--city', type=str, help='Specify city to display weather')
     
     args = parser.parse_args()
@@ -22,6 +24,8 @@ def main():
             display_weather_one_liner(weather_data)
         elif args.graphical:
             display_weather_data_ascii(weather_data)
+        elif args.graphical_color:
+            display_weather_data_ascii_color(weather_data)
         else:
             display_weather(weather_data)
     else:

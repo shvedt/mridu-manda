@@ -1,6 +1,12 @@
 # Mridu-Manda Changelog
 
-## Version 1.5 - Latest Release
+## Version 1.6 - Latest Release
+
+- Added a new weather display option `-gc` to display weather data with ascii and colors
+- Added sunrise and sunset times, feels like, visibility
+- Optimized some parts of the code to be more efficient
+
+## Version 1.5
 
 - Added support for Windows users
 

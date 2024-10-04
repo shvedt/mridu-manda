@@ -7,13 +7,14 @@ Mridu-Manda is a minimal console application that shows weather and is based on 
 - Compact display of weather
 - Supports automatic location detection using ipInfo
 - Supports command line city input
-- Two different output formats, one liner and default
+- Four different output formats, one liner, with ascii, with ascii and color and default
 
 ## Requirements
 
 - Requires an API key from OpenWeatherMap
 - Requires Python 3.8 or later
 - Requires `requests` module 2.31 or later
+- Requires `rich` module 13.8.0 or later
 
 ## Installation
 
@@ -51,6 +52,8 @@ This is licensed under the GNU General Public License version 3.0
 
 ## Changelog
 
-### Version 1.5 - Latest Release
+## Version 1.6 - Latest Release
 
-- Added support for Windows users
+- Added a new weather display option `-gc` to display weather data with ascii and colors
+- Added sunrise and sunset times, feels like, visibility
+- Optimized some parts of the code to be more efficient
